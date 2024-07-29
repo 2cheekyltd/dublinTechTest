@@ -10,46 +10,43 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 -   [File Structure](#file-structure)
 -   [Distance Calculation](#distance-calculation)
 -   [Troubleshooting](#troubleshooting)
+-   [Support](#support)
 
 ## Installation
 
 1. **Clone the repository:**
 
-    ```
-    bash
+    ```bash
     git clone https://github.com/your-repo/affiliate-invitation.git
     cd affiliate-invitation
-
     ```
 
 2. **Install dependencies:**
 
-    ```
+    ```bash
     composer install
-
     ```
 
 3. **Copy the example environment file and set your environment variables:**
 
-    ```
+    ```bash
     cp .env.example .env
     php artisan key:generate
-
     ```
 
 4. **Set up your environment:**
 
-    Ensure your .env file has the correct configurations, particularly for the database if needed. For this task, no database is required.
+Ensure your `.env` file has the correct configurations, particularly for the database if needed. For this task, no database is required.
 
 5. **Prepare the affiliates data file:**
 
-    Ensure that the affiliates.txt file is placed in the storage/app directory. This file should contain JSON-encoded affiliate data, one record per line.
+Ensure that the `affiliates.txt` file is placed in the `storage/app` directory. This file should contain JSON-encoded affiliate data, one record per line.
 
 ## Usage
 
-    Start the Laravel development server:
+Start the Laravel development server:
 
-    ```
+    ```bash
     php artisan serve
     ```
 
@@ -57,9 +54,9 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 
 ## Testing
 
-    Run the test suite to ensure the application is working correctly:
+Run the test suite to ensure the application is working correctly:
 
-    ```
+    ```bash
     php artisan test
     ```
 
@@ -71,9 +68,9 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 
 ## Distance Calculation
 
-    The distance between the office and each affiliate is calculated using the Haversine formula. This formula provides the distance between two points on the Earth’s surface, given their latitude and longitude in degrees.
+The distance between the office and each affiliate is calculated using the Haversine formula. This formula provides the distance between two points on the Earth’s surface, given their latitude and longitude in degrees.
 
-    ```
+    ```bash
     private function calculateDistance($lat1, $lon1, $lat2, $lon2)
 
     {
