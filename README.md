@@ -15,7 +15,8 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 
 1. **Clone the repository:**
 
-    ```bash
+    ```
+    bash
     git clone https://github.com/your-repo/affiliate-invitation.git
     cd affiliate-invitation
 
@@ -23,14 +24,16 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 
 2. **Install dependencies:**
 
-    ```composer install
+    ```
+    composer install
 
     ```
 
 3. **Copy the example environment file and set your environment variables:**
 
-    ```cp .env.example .env
-       php artisan key:generate
+    ```
+    cp .env.example .env
+    php artisan key:generate
 
     ```
 
@@ -45,13 +48,20 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 ## Usage
 
     Start the Laravel development server:
-    ```php artisan serve
+
+    ```
+    php artisan serve
+    ```
+
     Visit the application at http://localhost:8000/invite-affiliates to view the list of affiliates invited for the event.
 
 ## Testing
 
     Run the test suite to ensure the application is working correctly:
-    ```php artisan test
+
+    ```
+    php artisan test
+    ```
 
 ## File Structure
 
@@ -63,37 +73,42 @@ This Laravel application reads a list of affiliates from a file, calculates the 
 
     The distance between the office and each affiliate is calculated using the Haversine formula. This formula provides the distance between two points on the Earth’s surface, given their latitude and longitude in degrees.
 
-    ```private function calculateDistance($lat1, $lon1, $lat2, $lon2)
+    ```
+    private function calculateDistance($lat1, $lon1, $lat2, $lon2)
 
-{
-$earthRadius = 6371; // Earth radius in kilometers
+    {
+    $earthRadius = 6371; // Earth radius in kilometers
 
-    $lat1 = deg2rad($lat1);
-    $lon1 = deg2rad($lon1);
-    $lat2 = deg2rad($lat2);
-    $lon2 = deg2rad($lon2);
+        $lat1 = deg2rad($lat1);
+        $lon1 = deg2rad($lon1);
+        $lat2 = deg2rad($lat2);
+        $lon2 = deg2rad($lon2);
 
-    $latDifference = $lat2 - $lat1;
-    $lonDifference = $lon2 - $lon1;
+        $latDifference = $lat2 - $lat1;
+        $lonDifference = $lon2 - $lon1;
 
-    $a = sin($latDifference / 2) * sin($latDifference / 2) +
-        cos($lat1) * cos($lat2) *
-        sin($lonDifference / 2) * sin($lonDifference / 2);
+        $a = sin($latDifference / 2) * sin($latDifference / 2) +
+            cos($lat1) * cos($lat2) *
+            sin($lonDifference / 2) * sin($lonDifference / 2);
 
-    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
 
-    return $earthRadius * $c;
+        return $earthRadius * $c;
 
-}
+    }
 
-```
+    ```
+
 ## Troubleshooting
 
     •	No affiliates are displayed: Check that affiliates.txt is correctly placed in storage/app and contains valid JSON.
-	•	Incorrect distances: Verify the GPS coordinates and the Haversine formula implementation.
-	•	Development server issues: Ensure your environment and dependencies are set up correctly, and that no conflicting services are running.
+    •	Incorrect distances: Verify the GPS coordinates and the Haversine formula implementation.
+    •	Development server issues: Ensure your environment and dependencies are set up correctly, and that no conflicting services are running.
 
 ## Support
 
 For further assistance, please feel free to contact me on the e-mail address or phone number used in my application.
+
+```
+
 ```
